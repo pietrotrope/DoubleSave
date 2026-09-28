@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DoubleSave - About</title>
+    <script src="{{ url_for('static',filename='javascript/cookies.js') }}"></script>
+    <script src="{{ url_for('static',filename='javascript/jQuery.js') }}"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/styles.css') }}">
+
+    <link rel="icon" href="{{ url_for('static',filename='images/logo.png') }}" type="image/icon type">
+  </head>
+<body>
+
+
+  <link rel='stylesheet' href='https://netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
+
+
+  <div class="topnav">
+    <a href="./"><img id="logo" src="{{ url_for('static',filename='images/logo.png') }}"></a>
+    <a class="option" href="./offers">Offers</a>
+    <a class="option" href="./contact">Contact</a>
+    <a class="option active" href="./about">About</a>
+
+    <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="pietrotrope" data-color="#859f3d" data-emoji=""  data-font="Cookie" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#ffffff" data-coffee-color="#FFDD00" ></script>
+  </div>
+
+<div class="bootdey">
+    <div class="top_page">
+        <section>
+            <div class="search-field">
+
+
+        
+  
+            </div>
+        </section>
+    </div>
+    
+        <div class="stores" id="stores">
+            
+        </div>
+    </div>
+</div>
+
+<div class="botnav">
+    <a class="" href="./cookies">Cookies policy</a><br>
+    <a class="" href="./privacy">Privacy policy</a><br>
+    <a class="" href="./disclaimer">Disclaimer</a><br>
+    <a class="" href="./terms">Terms and Conditions</a>
+</div>
+
+<footer>
+    <p>&copy; 2025 Pietro Tropeano.</p>
+ </footer>
+
+
+
+
+<div id="cookie-banner" class="cookie-banner">
+        <div class="banner-content">
+            <div class="banner-text">
+                <p>
+                    This website uses cookies to ensure you get the best experience. We only use essential cookies that are necessary for the basic functionality of the site. More information on cookies can be found in our <a href="./cookies" style="color: #31511E; text-decoration: underline;">Cookies Policy</a>.
+                </p>
+            </div>
+            <div class="banner-buttons">
+                <button id="accept-all-btn" class="banner-btn accept-all-btn">
+                    Accept All
+                </button>
+                <button id="accept-necessary-btn" class="banner-btn accept-necessary-btn">
+                    Accept Only Necessary
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function() {
+            // Get the cookie banner element and buttons
+            const cookieBanner = document.getElementById('cookie-banner');
+            const acceptAllBtn = document.getElementById('accept-all-btn');
+            const acceptNecessaryBtn = document.getElementById('accept-necessary-btn');
+            
+            // Define the local storage key
+            const consentKey = 'cookie_consent';
+
+            // Function to show the banner
+            function showBanner() {
+                // Add the 'show' class to make the banner slide up
+                cookieBanner.classList.add('show');
+            }
+
+            // Function to hide the banner
+            function hideBanner() {
+                // Remove the 'show' class to make the banner slide down
+                cookieBanner.classList.remove('show');
+            }
+
+            // Check for existing consent in local storage
+            const hasConsent = getCookie(consentKey);
+            if (hasConsent == "") {
+                // If no consent is found, show the banner after a short delay
+                setTimeout(showBanner, 500);
+            }
+
+            // Event listener for the "Accept All" button
+            acceptAllBtn.addEventListener('click', function() {
+                // Set a value in local storage to remember the user's choice
+                setCookie(consentKey,  'accepted_all', 7);
+                hideBanner();
+            });
+
+            // Event listener for the "Accept Only Necessary" button
+            acceptNecessaryBtn.addEventListener('click', function() {
+                // Set a value in local storage to remember the user's choice
+                setCookie(consentKey,  'accepted_necessary', 7);
+                hideBanner();
+            });
+        });
+
+        </script>
+</body>
+</html>

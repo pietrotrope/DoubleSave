@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DoubleSave - Offers</title>
+    <script src="{{ url_for('static',filename='javascript/cookies.js') }}"></script>
+    <script src="{{ url_for('static',filename='javascript/jQuery.js') }}"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/styles.css') }}">
+
+    <link rel="icon" href="{{ url_for('static',filename='images/logo.png') }}" type="image/icon type">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+
+
+  <link rel='stylesheet' href='https://netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
+
+
+  <div class="topnav">
+    <a href="http://{{ IP_address }}:5000/"><img id="logo" src="{{ url_for('static',filename='images/logo.png') }}"></a>
+    <a class="option active" href="http://{{ IP_address }}:5000/offers">Offers</a>
+    <a class="option" href="http://{{ IP_address }}:5000/contact">Contact</a>
+
+    <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="pietrotrope" data-color="#859f3d" data-emoji=""  data-font="Cookie" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#ffffff" data-coffee-color="#FFDD00" ></script>
+  </div>
+
+<div class="bootdey">
+
+    <header class="hero">
+    <h1 class="site-name">DoubleSave</h1>
+    <p class="motto">Save your wallet, Save the planet.</p>
+    </header>
+
+    <div class="top_page">
+        <section>
+            <div class="search-field">
+
+
+                <div class="text-container">
+                    <input type="text" placeholder="Area (optional)" class="form-control" id="area" list="areas"/>
+                    <datalist id="areas">
+                        <option value="København Ø">København Ø</option>
+                        <option value="København V">København V</option>
+                        <option value="Frederiksberg C">Frederiksberg C</option>
+                        <option value="Brønshøj">Brønshøj</option>
+                        <option value="København K">København K</option>
+                        <option value="København S">København S</option>
+                        <option value="Vanløse">Vanløse</option>
+                        <option value="København N">København N</option>
+                        <option value="Valby">Valby</option>
+                        <option value="Frederiksberg">Frederiksberg</option>
+                        <option value="København NV">København NV</option>
+                        <option value="København SV">København SV</option>
+                        <option value="Kastrup">Kastrup</option>
+                        <option value="Hellerup">Hellerup</option>
+                        <option value="Søborg">Søborg</option>
+                        <option value="Rødovre">Rødovre</option>
+                        <option value="Ballerup">Ballerup</option>
+                        <option value="Skovlunde">Skovlunde</option>
+                        <option value="Herlev">Herlev</option>
+                        <option value="Brøndby">Brøndby</option>
+                        <option value="Brøndby Strand">Brøndby Strand</option>
+                        <option value="Hvidovre">Hvidovre</option>
+                        <option value="Albertslund">Albertslund</option>
+                        <option value="Dragør">Dragør</option>
+                        <option value="Gentofte">Gentofte</option>
+                        <option value="Dyssegård">Dyssegård</option>
+                        <option value="Charlottenlund">Charlottenlund</option>
+                        <option value="Bagsværd">Bagsværd</option>
+                        <option value="Glostrup">Glostrup</option>
+                        <option value="Ishøj">Ishøj</option>
+                        <option value="Vallensbæk Strand">Vallensbæk Strand</option>
+                        <option value="Vallensbæk">Vallensbæk</option>
+                        <option value="Nordhavn">Nordhavn</option>
+                    </datalist>
+                </div>
+
+                <div class="text-container">
+                    <input type="text" placeholder="address" class="form-control" id="address" list="addresses"/>
+                    <datalist id="addresses">
+                    </datalist>
+                    <button id="search_button" type="button" class="button">Search</button>
+
+                </div>
+
+                <div class="favorites-slider" id="favorites-slider">
+                    
+
+                </div>
+
+  
+            </div>
+        </section>
+    </div>
+    
+        <div class="stores" id="stores">
+            
+        </div>
+    </div>
+</div>
+
+<div class="botnav">
+    <a class="" href="http://{{ IP_address }}:5000/cookies">Cookies policy</a><br>
+    <a class="" href="http://{{ IP_address }}:5000/privacy">Privacy policy</a><br>
+    <a class="" href="http://{{ IP_address }}:5000/disclaimer">Disclaimer</a><br>
+    <a class="" href="http://{{ IP_address }}:5000/terms">Terms and Conditions</a>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+ <div id="cookie-banner" class="fixed bottom-0 left-0 w-full p-6 transition-transform duration-500 ease-in-out transform translate-y-full z-50">
+        <div class="bg-white rounded-lg shadow-2xl p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0 md:space-x-8 max-w-4xl mx-auto">
+            <div class="flex-1 text-center md:text-left">
+                <p class="text-sm md:text-base text-gray-700 font-medium leading-relaxed">
+                    This website uses cookies to ensure you get the best experience. We only use essential cookies that are necessary for the basic functionality of the site.
+                </p>
+            </div>
+            <div class="flex-shrink-0 flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 w-full md:w-auto">
+                <button id="accept-all-btn" class="w-full sm:w-auto px-6 py-3 bg-indigo-600 text-white font-semibold rounded-full shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition-all duration-300">
+                    Accept All
+                </button>
+                <button id="accept-necessary-btn" class="w-full sm:w-auto px-6 py-3 bg-gray-200 text-gray-800 font-semibold rounded-full shadow-md hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 transition-all duration-300">
+                    Accept Only Necessary
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+<footer>
+    <p>&copy; 2025 Pietro Tropeano.</p>
+ </footer>
+
+
+
+
+<script>
+
+var timeraddress;
+var finishedtyping = 150;
+var $input = $('#address');
+
+
+function htmlProduct(datap, store_index, key) {
+  let imglink = datap[store_index][1][key][14];
+  if (imglink === "noImage") {
+    imglink = "{{ url_for('static',filename='images/noImg.png') }}";
+  }
+
+  const date_offer = new Date(datap[store_index][1][key][3]).toLocaleDateString();
+  const stock = datap[store_index][1][key][7] + (datap[store_index][1][key][8] !== "each" ? ` ${datap[store_index][1][key][8]}` : "");
+
+  const new_html = `
+    <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+      <a class="block relative h-48 rounded overflow-hidden">
+        <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="${imglink}" onerror="this.onerror=null; this.src='{{ url_for('static',filename='images/noImg.png') }}'">
+      </a>
+      <div class="mt-4">
+        <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">${datap[store_index][1][key][13]}</h3>
+        <h2 class="text-gray-900 title-font text-lg font-medium">${datap[store_index][1][key][4]}</h2>
+        <p class="mt-1"><s class="text-gray-500">${datap[store_index][1][key][5]}</s> ${datap[store_index][1][key][2]}</p>
+        <p class="mt-1">Valid until: ${date_offer}</p>
+        <p class="mt-1">In stock: ${stock}</p>
+      </div>
+    </div>
+  `;
+
+  return new_html;
+}
+
+
+
+
+
+$input.on('keyup', function () {
+  clearTimeout(timeraddress);
+  timeraddress = setTimeout(doneTyping, finishedtyping);
+  if (event.key === "Enter") {
+    selected_area()
+    }
+});
+
+$input.on('keydown', function () {
+  clearTimeout(timeraddress);
+});
+
+//finished typing
+function doneTyping () {
+
+    $.ajax({
+      type: 'GET',
+      url: "http://{{ IP_address }}:5000/areas",
+      dataType: "text",
+      data: { 
+        "area":$("#area").val(),
+        "partial_address":$("#address").val()},
+      success: function(data){
+        $('#addresses').html(data)
+      }});
+}
+
+
+
+$(document).ready(function(){
+
+
+
+
+
+
+    document.addEventListener("DOMContentLoaded", function() {
+            // Get the cookie banner element and buttons
+            const cookieBanner = document.getElementById('cookie-banner');
+            const acceptAllBtn = document.getElementById('accept-all-btn');
+            const acceptNecessaryBtn = document.getElementById('accept-necessary-btn');
+            
+            // Define the local storage key
+            const consentKey = 'cookie_consent';
+
+            // Function to show the banner
+            function showBanner() {
+                // Remove the 'translate-y-full' class to make the banner slide up
+                cookieBanner.classList.remove('translate-y-full');
+            }
+
+            // Function to hide the banner
+            function hideBanner() {
+                // Add the 'translate-y-full' class to make the banner slide down
+                cookieBanner.classList.add('translate-y-full');
+            }
+
+            // Check for existing consent in local storage
+            const hasConsent = localStorage.getItem(consentKey);
+            if (!hasConsent) {
+                // If no consent is found, show the banner
+                setTimeout(showBanner, 500); // Wait a moment to ensure page content loads
+            }
+
+            // Event listener for the "Accept All" button
+            acceptAllBtn.addEventListener('click', function() {
+                // Set a value in local storage to remember the user's choice
+                localStorage.setItem(consentKey, 'accepted_all');
+                hideBanner();
+            });
+
+            // Event listener for the "Accept Only Necessary" button
+            acceptNecessaryBtn.addEventListener('click', function() {
+                // Set a value in local storage to remember the user's choice
+                localStorage.setItem(consentKey, 'accepted_necessary');
+                hideBanner();
+            });
+        });
+
+    RefreshCookies(["favorites", "favorites_names", "address_last_research", "area_last_research"],30)
+
+
+
+
+    var onlongtouch; 
+    var timer;
+    var touchduration = 800;
+
+
+
+
+    function touchstart(e) {
+        e.preventDefault();
+        if (!timer) {
+            timer = setTimeout(onlongtouch.bind($(this)), touchduration);
+        }
+    }
+
+    function touchend() {
+        if (timer) {
+            clearTimeout(timer);
+            timer = null;
+
+
+            s_name = this.getAttribute("data-code")
+
+
+            $.ajax({
+            type: 'GET',
+            url: "http://{{ IP_address }}:5000/store_products",
+            dataType: "text",
+            data: { 
+                "store-code": s_name},
+                success: function(data){update_info(data)}
+            });
+        }
+    }
+
+
+
+function update_favs(){
+    favs = getCookie("favorites")
+    favs_names = getCookie("favorites_names")
+    if (favs != ""){
+    favs = JSON.parse(favs)
+    favs_names = JSON.parse(favs_names)
+    
+    $('#favorites-slider').empty();
+    for (let i = 0; i < favs.length; i++) {
+
+
+        to_append = `<div class="panel-body text-center favorite-store" data-code=${favs[i]}><h4><a href="#" class="pro-title" data-code=${favs[i]}><b>${favs_names[i]}</b></a></h4></div>`
+        
+        $('#favorites-slider').append(to_append)
+
+
+        for (const element of document.getElementsByClassName('favorite-store')) {
+            element.addEventListener("touchstart", touchstart, false);
+            element.addEventListener("touchend", touchend, false);
+
+            element.addEventListener("mousedown", touchstart, false);
+            element.addEventListener("mouseup", touchend, false);
+
+        }
+
+
+        }
+    }
+
+}
+
+
+    function move_favorite(code, dir, groupElements, par){
+
+        favs = JSON.parse(getCookie("favorites"))
+        favs_names = JSON.parse(getCookie("favorites_names"))
+
+        const index = favs.indexOf(code);
+
+        if (dir >0 && index+1<favs.length) {
+            tmp = favs_names[index+1]
+            tmp2 = favs[index+1] 
+
+            favs_names[index+1] = favs_names[index]
+            favs[index+1] = favs[index]
+
+            favs_names[index] = tmp
+            favs[index] = tmp2
+        }
+
+        if (dir <0 && index-1>=0) {
+            tmp = favs_names[index-1]
+            tmp2 = favs[index-1] 
+
+            favs_names[index-1] = favs_names[index]
+            favs[index-1] = favs[index]
+
+            favs_names[index] = tmp
+            favs[index] = tmp2
+        }
+    
+        setCookie("favorites_names", JSON.stringify(favs_names), 30)
+        setCookie("favorites", JSON.stringify(favs), 30)
+        
+        update_favs()
+    }
+
+
+    function divClicked(el) {
+    var editableText = document.createElement("textarea");
+    var editableText2 = document.createElement("span");
+    var editableText3 = document.createElement("span");
+
+    editableText2.onclick = function(){ move_favorite(el.dataset.code, 1, groupElements, par)}
+    editableText2.innerText = ">"
+
+    editableText3.onclick = function(){ move_favorite(el.dataset.code, -1, groupElements, par)}
+    editableText3.innerText = "<"
+
+    editableText.value = el.innerText
+    par = el.parentElement.parentElement
+    code = el.dataset.code
+
+    groupElements = document.createElement("div");
+    groupElements.className = "to_center"
+    groupElements.appendChild(editableText3)
+    groupElements.appendChild(editableText)
+    groupElements.appendChild(editableText2)
+    el.replaceWith(groupElements);
+    
+    el.parentElement = par
+    par.removeEventListener("touchstart", touchstart, false);
+    par.removeEventListener("touchend", touchend, false);
+    par.removeEventListener("mousedown", touchstart, false);
+    par.removeEventListener("mouseup", touchend, false);
+
+    editableText.addEventListener('keyup', function () {editableTextBlurred(groupElements,par,code);})
+}
+
+    function editableTextBlurred(el, par,code) {
+    if (event.key === "Enter") {
+
+        favs = JSON.parse(getCookie("favorites"))
+        favs_names = JSON.parse(getCookie("favorites_names"))
+        const index = favs.indexOf(code);
+
+        favs_names[index] = el.childNodes[1].value
+        setCookie("favorites_names", JSON.stringify(favs_names), 30)
+
+        var html = `<a href="#" class="pro-title" data-code=${code}><b>${el.childNodes[1].value}</b></a>`
+        
+        var viewableText = document.createElement("h4");
+        viewableText.innerHTML = html;
+        el.replaceWith(viewableText);
+
+        par.addEventListener("touchstart", touchstart, false);
+        par.addEventListener("touchend", touchend, false);
+
+        par.addEventListener("mousedown", touchstart, false);
+        par.addEventListener("mouseup", touchend, false);
+        //divClicked.bind(el)
+        //$(viewableText).click(divClicked(el));
+    }
+}
+
+
+    onlongtouch = function() { 
+        timer = null;
+        console.log(this); 
+        
+        to_bind = this[0].childNodes[0].childNodes[0]
+        divClicked(to_bind)
+    };
+    
+    
+
+
+update_favs()
+
+
+    function update_info(data){
+        new_html = ""
+        datap = JSON.parse(data)
+
+
+        // Iterate over stores here
+        var stores_info = ""
+
+
+
+        Object.keys(datap).forEach(function(store_index) {
+
+        favs = getCookie("favorites")
+        favs_names = getCookie("favorites_names")
+        if (favs == ""){
+        img_add = "{{ url_for('static',filename='images/add.png') }}"
+        }else{
+            favs = JSON.parse(favs)
+            if (favs.indexOf(datap[store_index][0][0][0][0])>-1){
+
+            img_add = "{{ url_for('static',filename='images/remove.png') }}"
+            }else{
+
+            img_add = "{{ url_for('static',filename='images/add.png') }}"
+        }
+        }
+
+        stores_info = stores_info.concat(`<div class="store_title">
+            <h2 data-code='${datap[store_index][0][0][0][0]}' data-name='${datap[store_index][0][0][0][3]}' class='stores_names'><b>${datap[store_index][0][0][0][3]}.</b> ${datap[store_index][0][0][0][2]}, ${datap[store_index][0][1].toFixed(2)} Km 
+            <img class="favorites" src="${img_add}" alt=""/>
+            </h2>
+                </div>
+            <section class="text-gray-600 body-font">
+            <div class="container px-5 py-24 mx-auto">
+                <div class="flex flex-wrap -m-4">
+            `)
+
+
+        Object.keys(datap[store_index][1]).forEach(function(key) {
+          stores_info = stores_info.concat(htmlProduct(datap, store_index, key))
+
+        });
+
+        stores_info = stores_info.concat("</div></div></section>")
+
+        });
+        //item = "<div class=\"column\"><div class=\"card\"> <img src="+imglink+" alt="+datap[0][1][key][13]+" style=\"width:100%\"> <h1 id=\"tit\">"+datap[0][1][key][13]+"</h1></p><p>"+datap[0][1][key][4]+"</p><p>"+datap[0][1][key][5]+"</p><p><a>Add to favourites</a></p></div></div>"
+        $("#stores").html(stores_info)
+
+        for (const element of document.getElementsByClassName('stores_names')) {
+            element.addEventListener('click', () => {
+                console.log('Element clicked:', element.getAttribute("data-code"));
+
+                favs = getCookie("favorites")
+                favs_names = getCookie("favorites_names")
+
+                img_but = element.children[1]
+
+                if (favs == ""){
+                    favs = []
+                    favs_names = []
+
+                    favs.push(element.getAttribute("data-code"))
+                    favs_names.push(element.getAttribute("data-name"))
+
+                    setCookie("favorites", JSON.stringify(favs), 30)
+                    setCookie("favorites_names", JSON.stringify(favs_names), 30)
+
+                    img_but.setAttribute('src', "{{ url_for('static',filename='images/remove.png') }}")
+
+                } else {
+
+                favs = JSON.parse(favs)
+                favs_names = JSON.parse(favs_names)
+
+                if (favs.indexOf(element.getAttribute("data-code"))>-1){
+
+                    const index = favs.indexOf(element.getAttribute("data-code"));
+                    if (index > -1) { 
+                        favs.splice(index);
+                        favs_names.splice(index);}
+                    setCookie("favorites", JSON.stringify(favs), 30)
+                    setCookie("favorites_names", JSON.stringify(favs_names), 30)
+
+                    img_but.setAttribute('src', "{{ url_for('static',filename='images/add.png') }}")
+
+                } else {
+
+                    favs.push(element.getAttribute("data-code"))
+                    favs_names.push(element.getAttribute("data-name"))
+
+                    setCookie("favorites", JSON.stringify(favs), 30)
+                    setCookie("favorites_names", JSON.stringify(favs_names), 30)
+
+                    img_but.setAttribute('src', "{{ url_for('static',filename='images/remove.png') }}")
+                }
+            }
+
+                
+                
+                // GO TO THE STORE
+            }); }
+
+        //console.log(item)
+
+        //$("#ID").append(html) 
+        }
+
+
+
+
+
+    function selected_area () {
+
+        $.ajax({
+        type: 'GET',
+        url: "http://{{ IP_address }}:5000/closeby_address",
+        dataType: "text",
+        data: { 
+            "address": $("#address").val(),
+            "area": $("#area").val()},
+        success: function(data){
+
+            setCookie("address_last_research", $("#address").val(), 30)
+            setCookie("area_last_research", $("#area").val(), 30)
+
+        update_info(data)
+        }});
+
+
+
+    }
+
+    $("#search_button").click(function() {selected_area()})
+
+
+    let last_address = getCookie("address_last_research");
+    let last_area_last_research = getCookie("area_last_research")
+    if (last_address != "") {
+
+        $.ajax({
+      type: 'GET',
+      url: "http://{{ IP_address }}:5000/closeby_address",
+      dataType: "text",
+      data: { 
+        "address": last_address,
+        "area": last_area_last_research},
+        success: function(data){update_info(data)}
+    });
+
+
+    } else {
+    $.ajax({
+      type: 'GET',
+      url: "http://{{ IP_address }}:5000/closeby",
+      dataType: "text",
+      data: { 
+        "l1": "12.572962",
+        "l2":"55.683987"},
+      success: function(data){update_info(data)}
+    });
+}
+})
+
+</script>
+
+</body>
+</html>

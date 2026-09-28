@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DoubleSave - About</title>
+    <script src="{{ url_for('static',filename='javascript/cookies.js') }}"></script>
+    <script src="{{ url_for('static',filename='javascript/jQuery.js') }}"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/styles.css') }}">
+
+    <link rel="icon" href="{{ url_for('static',filename='images/logo.png') }}" type="image/icon type">
+
+    <style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header */
+header {
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+header nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+header nav a.active {
+    text-decoration: underline;
+}
+
+/* Main Content */
+.contact-page {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #31511e17;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-top: 2%;
+}
+
+.contact-page h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #f5f5f5;
+}
+
+.contact-page p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: #f5f5f5;
+}
+
+.contact-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.detail h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #f5f5f5;
+}
+
+.detail p, .detail ul {
+    font-size: 1.1rem;
+    color: #f5f5f5;
+}
+
+.detail ul {
+    list-style-type: none;
+}
+
+.detail ul li {
+    margin-bottom: 0.5rem;
+}
+
+.detail ul li a {
+    text-decoration: none;
+    color: #0066cc;
+}
+
+.detail ul li a:hover {
+    text-decoration: underline;
+}
+
+    </style>
+  </head>
+<body>
+
+
+  <link rel='stylesheet' href='https://netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
+
+
+  <div class="topnav">
+    <a href="./"><img id="logo" src="{{ url_for('static',filename='images/logo.png') }}"></a>
+    <a class="option" href="./offers">Offers</a>
+    <a class="option active" href="./contact">Contact</a>
+
+    <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="pietrotrope" data-color="#859f3d" data-emoji=""  data-font="Cookie" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#ffffff" data-coffee-color="#FFDD00" ></script>
+  </div>
+
+
+  <main class="contact-page">
+    <section class="contact-info">
+        <h1>Contact Me</h1>
+        <p>Feel free to reach out to me using the information below!</p>
+
+        <div class="contact-details">
+            <div class="detail">
+                <h2>Email</h2>
+                <p><a href="mailto:pietro.tropeano.dev@gmail.com">pietro.tropeano.dev@gmail.com</a></p>
+            </div>
+
+            <div class="detail">
+                <h2>Location</h2>
+                <p>Copenhagen, Denmark</p>
+            </div>
+
+            <div class="detail">
+                <h2>Social Media</h2>
+                <ul>
+                    <li><a href="https://linkedin.com/in/pietro-tropeano-ml" target="_blank">LinkedIn</a></li>
+                    <li><a href="https://github.com/pietrotrope" target="_blank">GitHub</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="intro">
+            Hi, I am on a mission to reduce food waste and make sustainable shopping easier for everyone. Every year, a lot of perfectly good food is thrown away simply because it is nearing expiration date,
+            while people around us are looking for affordable, high-quality products. That's where this website comes in.
+        
+            I created <b>DoubleSave</b> to help connect people with great offers on food items that are about to expire, so you can save money while making a positive impact on the environment.
+            The idea is simple: by highlighting deals on products nearing their end of shelf life, I hope to encourage more people to buy them before they're wasted. It's not just about saving a few bucks;
+            it's about reducing waste, being more conscious about our consumption, and making the most out of what we already have.
+            I believe that small, everyday actions can lead to big changes, and I hope this website helps you shop smarter, reduce waste, and feel good about the choices you're making.
+            Thank you for joining me on this journey toward a more sustainable future, one offer at a time.
+        </div>
+        
+    </section>
+</main>
+
+
+<div class="botnav">
+    <a class="" href="./cookies">Cookies policy</a><br>
+    <a class="" href="./privacy">Privacy policy</a><br>
+    <a class="" href="./disclaimer">Disclaimer</a><br>
+    <a class="" href="./terms">Terms and Conditions</a>
+</div>
+
+<footer>
+    <p>&copy; 2025 Pietro Tropeano.</p>
+ </footer>
+
+
+
+
+
+<div id="cookie-banner" class="cookie-banner">
+        <div class="banner-content">
+            <div class="banner-text">
+                <p>
+                    This website uses cookies to ensure you get the best experience. We only use essential cookies that are necessary for the basic functionality of the site. More information on cookies can be found in our <a href="./cookies" style="color: #31511E; text-decoration: underline;">Cookies Policy</a>.
+                </p>
+            </div>
+            <div class="banner-buttons">
+                <button id="accept-all-btn" class="banner-btn accept-all-btn">
+                    Accept All
+                </button>
+                <button id="accept-necessary-btn" class="banner-btn accept-necessary-btn">
+                    Accept Only Necessary
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function() {
+            // Get the cookie banner element and buttons
+            const cookieBanner = document.getElementById('cookie-banner');
+            const acceptAllBtn = document.getElementById('accept-all-btn');
+            const acceptNecessaryBtn = document.getElementById('accept-necessary-btn');
+            
+            // Define the local storage key
+            const consentKey = 'cookie_consent';
+
+            // Function to show the banner
+            function showBanner() {
+                // Add the 'show' class to make the banner slide up
+                cookieBanner.classList.add('show');
+            }
+
+            // Function to hide the banner
+            function hideBanner() {
+                // Remove the 'show' class to make the banner slide down
+                cookieBanner.classList.remove('show');
+            }
+
+            // Check for existing consent in local storage
+            const hasConsent = getCookie(consentKey);
+            if (hasConsent == "") {
+                // If no consent is found, show the banner after a short delay
+                setTimeout(showBanner, 500);
+            }
+
+            // Event listener for the "Accept All" button
+            acceptAllBtn.addEventListener('click', function() {
+                // Set a value in local storage to remember the user's choice
+                setCookie(consentKey,  'accepted_all', 7);
+                hideBanner();
+            });
+
+            // Event listener for the "Accept Only Necessary" button
+            acceptNecessaryBtn.addEventListener('click', function() {
+                // Set a value in local storage to remember the user's choice
+                setCookie(consentKey,  'accepted_necessary', 7);
+                hideBanner();
+            });
+        });
+
+        </script>
+
+</body>
+</html>
